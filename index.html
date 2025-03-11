@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiftie Album Ranking</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:,">
+</head>
+<body>
+    <div id="intro-page">
+        <h1>Welcome to the Swiftie Ranking Experience! 🎶</h1>
+        <h2>Rank Taylor Swift's songs across all albums<br>and discover your ultimate favorite!</h2>
+        <button onclick="startRanking()">Start Ranking</button>
+    </div>
+    <div id="album-section"></div>
+    <div id="results" style="display: none;"></div>
+    <div id="final-rankings" style="display: none; text-align: center;">
+        <h1>Your Taylor Swift Album Ranking! 🎉</h1>
+        <div id="rankings-list"></div>
+        <p id="top-album-blurb"></p>
+        <button onclick="restartRanking()">Rank Again</button>
+    </div>    
+    <script src="script.js"></script>
+</body>
+</html>

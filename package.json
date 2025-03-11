@@ -1,0 +1,15 @@
+{
+  "name": "happiest-taylor-album",
+  "version": "1.0.0",
+  "description": "A personal project started in October 2023 (continuously updated with new releases) that lets Swifties rate each song on a scale of 1-5, discover their favorite albums, and explore what their preferences say about them.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

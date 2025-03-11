@@ -1,0 +1,568 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    background: none;
+}
+
+#intro-page {
+    text-align: center;
+    padding: 30px;
+    max-width: 80%;
+    position: relative;
+}
+
+#intro-page h1 {
+    font-size: 3rem;
+    color: #b30000;
+    margin-bottom: 10px;
+    font-family: 'Georgia';
+}
+
+#intro-page h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Georgia';
+}
+
+#intro-page button {
+    font-size: 1.3rem;
+    padding: 15px 20px;
+    background-color: #b30000;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Georgia';
+}
+
+#intro-page button:hover {
+    background-color: #800000;
+}
+
+.album-container {
+    background: none !important;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 100px 20px 80px 20px; /* Adjusted padding for visibility */
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.album-container h1 {
+    font-size: 3rem;
+    margin-bottom: 70px;
+    font-family: 'Georgia';
+}
+
+.song p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: 'Georgia';
+    margin-top: 25px;
+}
+
+.lyrics-container {
+    display: none;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-top: 10px;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.nav-buttons {
+    margin-top: 50px; /* Adds space between last song and navigation buttons */
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adds spacing between buttons */
+}
+
+.nav-buttons button {
+    background-color: #007BFF; 
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.nav-buttons button:hover {
+    background-color: #0056b3; 
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 15px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 25px; 
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* 🎸 Taylor Swift (Debut) – Lighter Rustic Background */
+.debut-theme {
+    background: linear-gradient(to bottom, #c8a27e, #d4b28c, #e2c19a) !important;
+    font-family: 'Georgia', serif; 
+    color: black; 
+    position: relative; /* Ensures positioning for clipart */
+}
+
+/* Container for scattered guitar clipart */
+.debut-theme::before,
+.debut-theme::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 220px; /* Increase width to fit more guitars */
+    height: 100%;
+    background-image: url('guitar-clipart.png'); /* Ensure this image exists */
+    background-repeat: repeat-y repeat-x; /* Repeat both vertically and horizontally */
+    background-size: 70px 70px; /* Adjust size of individual images */
+}
+
+/* Left Side */
+.debut-theme::before {
+    left: 0;
+}
+
+/* Right Side */
+.debut-theme::after {
+    right: 0;
+}
+
+/* 🌾 Taylor Swift (Debut) – Match lyrics box to background */
+.debut-theme .lyrics-container {
+    background: #c8a27e !important; /* Same as the Debut background */
+    color: black !important;
+}
+
+/* 🌟 Fearless – Golden Stars Aesthetic */
+.fearless-theme {
+    background: linear-gradient(to bottom, #f7e0b6, #f5d68f) !important;
+    font-family: 'Playfair Display', serif;
+    color: black;
+    position: relative; /* Ensures positioning for clipart */
+}
+
+/* Container for scattered stars clipart */
+.fearless-theme::before,
+.fearless-theme::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 220px; /* Adjust width to fit stars */
+    height: 100%;
+    background-image: url('/stars-clipart.png'); /* Ensure this image exists */
+    background-repeat: repeat-y repeat-x; /* Repeat both vertically and horizontally */
+    background-size: 70px 70px; /* Adjust size of individual images */
+}
+
+/* Left Side */
+.fearless-theme::before {
+    left: 0;
+}
+
+/* Right Side */
+.fearless-theme::after {
+    right: 0;
+}
+
+.fearless-theme .lyrics-container {
+    background: #f7e0b6 !important; /* Same as the Fearless background */
+    color: black !important;
+}
+
+/* 💜 Speak Now – Enchanted Concert Vibes */
+.speaknow-theme {
+    background: linear-gradient(to bottom, #5d3a9b, #c39bd3) !important;
+    font-family: 'Dancing Script', cursive;
+    color: white;
+    position: relative; /* Ensures positioning for clipart */
+}
+
+/* Container for scattered microphone clipart */
+.speaknow-theme::before,
+.speaknow-theme::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 220px; /* Adjust width to fit microphones */
+    height: 100%;
+    background-image: url('/microphone-clipart.png'); /* Ensure this image exists */
+    background-repeat: repeat-y repeat-x; /* Repeat both vertically and horizontally */
+    background-size: 70px 70px; /* Adjust size of individual images */
+}
+
+/* Left Side */
+.speaknow-theme::before {
+    left: 0;
+}
+
+/* Right Side */
+.speaknow-theme::after {
+    right: 0;
+}
+
+.speaknow-theme .lyrics-container {
+    background: #5d3a9b !important; /* Same as the Speak Now background */
+    color: white !important;
+}
+
+/* ❤️ Red – Bold & Nostalgic Scarf Aesthetic */
+.red-theme {
+    background: linear-gradient(to bottom, #b22222, #ff6f61) !important;
+    font-family: 'Courier New', monospace;
+    color: white;
+    position: relative; /* Ensures positioning for clipart */
+}
+
+/* Container for scattered scarf clipart */
+.red-theme::before,
+.red-theme::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 220px; /* Adjust width to fit scarves */
+    height: 100%;
+    background-image: url('/scarf-clipart.png'); /* Ensure this image exists */
+    background-repeat: repeat-y repeat-x; /* Repeat both vertically and horizontally */
+    background-size: 70px 70px; /* Adjust size of individual images */
+}
+
+/* Left Side */
+.red-theme::before {
+    left: 0;
+}
+
+/* Right Side */
+.red-theme::after {
+    right: 0;
+}
+
+.red-theme .lyrics-container {
+    background: #b22222 !important; /* Same as the Red background */
+    color: white !important;
+}
+
+/* 🎧 1989 – White Background with Scattered Clipart */
+.nineteeneighty-nine-theme {
+    background: white !important;
+    font-family: 'Futura';
+    color: #2c3e50;
+    position: relative;
+}
+
+/* Container for scattered clipart */
+.nineteeneighty-nine-theme::before,
+.nineteeneighty-nine-theme::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 240px; /* Adjust width as needed */
+    height: 100%;
+    background-image: url('/1989-clipart.png'); /* Make sure this image exists */
+    background-repeat: repeat-y repeat-x; /* Repeat vertically */
+    background-size: 60px 60px; /* Adjust size of individual images */
+}
+
+/* Left Side */
+.nineteeneighty-nine-theme::before {
+    left: 0;
+}
+
+/* Right Side */
+.nineteeneighty-nine-theme::after {
+    right: 0;
+}
+
+/* 🐍 Reputation – Dark & Dramatic Snake Aesthetic */
+.reputation-theme {
+    background: linear-gradient(to bottom, #000000, #1a1a1a, #333333) !important;
+    font-family: 'Times New Roman', serif;
+    color: white;
+    position: relative; /* Ensures positioning for clipart */
+}
+
+/* Container for scattered snake clipart */
+.reputation-theme::before,
+.reputation-theme::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 210px; /* Adjust width to fit snakes */
+    height: 100%;
+    background-image: url('/snake-clipart.png'); /* Ensure this image exists */
+    background-repeat: repeat-y repeat-x; /* Repeat both vertically and horizontally */
+    background-size: 70px 70px; /* Adjust size of individual images */
+}
+
+/* Left Side */
+.reputation-theme::before {
+    left: 0;
+}
+
+/* Right Side */
+.reputation-theme::after {
+    right: 0;
+}
+
+/* 🐍 Reputation - Fix white text on white background */
+.reputation-theme .lyrics-container {
+    background: black !important;
+    color: white !important;
+    border: 1px solid #777 !important; /* Optional: Adds a subtle border */
+}
+
+/* 💖 Lover – Soft Pastel Hearts Aesthetic */
+.lover-theme {
+    background: linear-gradient(to bottom, #f8cdda, #ff9a9e) !important;
+    font-family: 'Pacifico', cursive;
+    color: black;
+    position: relative; /* Ensures positioning for clipart */
+}
+
+/* Container for scattered heart clipart */
+.lover-theme::before,
+.lover-theme::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 210px; /* Adjust width to fit hearts */
+    height: 100%;
+    background-image: url('/heart-clipart.png'); /* Ensure this image exists */
+    background-repeat: repeat-y repeat-x; /* Repeat both vertically and horizontally */
+    background-size: 70px 70px; /* Adjust size of individual images */
+}
+
+/* Left Side */
+.lover-theme::before {
+    left: 0;
+}
+
+/* Right Side */
+.lover-theme::after {
+    right: 0;
+}
+
+.lover-theme .lyrics-container {
+    background: #f8cdda !important; /* Same as the Lover background */
+    color: black !important;
+}
+
+/* 🌲 Folklore – Misty Woodland Aesthetic */
+.folklore-theme {
+    background: linear-gradient(to bottom, #e0e0e0, #cfcfcf, #b0b0b0) !important;
+    font-family: 'Typewriter', serif;
+    color: black;
+    position: relative; /* Ensures positioning for clipart */
+}
+
+/* Container for scattered tree clipart */
+.folklore-theme::before,
+.folklore-theme::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 220px; /* Adjust width to fit trees */
+    height: 100%;
+    background-image: url('/tree-clipart.png'); /* Ensure this image exists */
+    background-repeat: repeat-y repeat-x; /* Repeat both vertically and horizontally */
+    background-size: 70px 70px; /* Adjust size of individual images */
+}
+
+/* Left Side */
+.folklore-theme::before {
+    left: 0;
+}
+
+/* Right Side */
+.folklore-theme::after {
+    right: 0;
+}
+
+/* 🌲 Folklore – Match lyrics box to background */
+.folklore-theme .lyrics-container {
+    background: #e0e0e0 !important; /* Same as the Folklore background */
+    color: black !important;
+}
+
+/* 🍂 Evermore – Cozy Cottagecore Aesthetic */
+.evermore-theme {
+    background: linear-gradient(to bottom, #8b4513, #a0522d, #b22222) !important;
+    font-family: 'Merriweather', serif;
+    color: white;
+    position: relative; /* Ensures positioning for clipart */
+}
+
+/* Container for scattered cottage clipart */
+.evermore-theme::before,
+.evermore-theme::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 210px; /* Adjust width to fit cottages */
+    height: 100%;
+    background-image: url('/cottage-clipart.png'); /* Ensure this image exists */
+    background-repeat: repeat-y repeat-x; /* Repeat both vertically and horizontally */
+    background-size: 70px 70px; /* Adjust size of individual images */
+}
+
+/* Left Side */
+.evermore-theme::before {
+    left: 0;
+}
+
+/* Right Side */
+.evermore-theme::after {
+    right: 0;
+}
+
+.evermore-theme .lyrics-container {
+    background: #8b4513 !important; /* Same as the Evermore background */
+    color: white !important;
+}
+
+/* 🌌 Midnights – Deep Blue with Grandfather Clocks */
+.midnights-theme {
+    background: linear-gradient(to bottom, #001f3f, #011b33, #02274d) !important;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    position: relative;
+}
+
+/* Container for scattered clock clipart */
+.midnights-theme::before,
+.midnights-theme::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 220px; /* Adjust width to fit clocks */
+    height: 100%;
+    background-image: url('/grandfather_clock.png'); /* Ensure this image exists */
+    background-repeat: repeat-y repeat-x; /* Repeat both vertically and horizontally */
+    background-size: 80px 80px; /* Adjust size of individual images */
+}
+
+/* Left Side */
+.midnights-theme::before {
+    left: 0;
+}
+
+/* Right Side */
+.midnights-theme::after {
+    right: 0;
+}
+
+/* 🌌 Midnights – Fix white text on white background */
+.midnights-theme .lyrics-container {
+    background: #001f3f !important; /* Deep navy blue */
+    color: white !important;
+    border: 1px solid #004080 !important; /* Optional: Subtle border for clarity */
+}
+
+/* 📖 The Tortured Poets Department – Light Grey with Typewriters */
+.torturedpoets-theme {
+    background: linear-gradient(to bottom, #d9d9d9, #cfcfcf, #bfbfbf) !important;
+    font-family: 'Courier', monospace;
+    color: black;
+    position: relative;
+}
+
+/* Container for scattered typewriter clipart */
+.torturedpoets-theme::before,
+.torturedpoets-theme::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 220px; /* Adjust width to fit typewriters */
+    height: 100%;
+    background-image: url('/typewriter.png'); /* Ensure this image exists */
+    background-repeat: repeat-y repeat-x; /* Repeat both vertically and horizontally */
+    background-size: 80px 80px; /* Adjust size of individual images */
+}
+
+/* Left Side */
+.torturedpoets-theme::before {
+    left: 0;
+}
+
+/* Right Side */
+.torturedpoets-theme::after {
+    right: 0;
+}
+
+/* 📖 The Tortured Poets Department – Match lyrics box to background */
+.torturedpoets-theme .lyrics-container {
+    background: #d9d9d9 !important; /* Same as the TTPD background */
+    color: black !important;
+}
+
+/* Ensure all stars have a default size */
+.stars-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 24px; /* Default size for all albums */
+    white-space: nowrap;
+}
+
+.stars {
+    cursor: pointer;
+    font-size: inherit;
+    color: gray;
+    transition: color 0.3s ease-in-out;
+}
+
+/* ❤️ Special Fix for Red (Increase Star Size) */
+.red-theme .stars-container {
+    font-size: 45px !important; /* Manually increase star size */
+}
+
+.red-theme .stars {
+    font-size: 45px !important; /* Force bigger stars */
+}
+
+/* 🔥 Ensure song rows on Red don't shrink too much */
+.red-theme .song {
+    min-height: 50px !important; /* Force taller rows */
+    font-size: 20px !important; /* Make song text larger */
+}
+
+/* ⭐ Special Fix for The Tortured Poets Department */
+.torturedpoets-theme .stars-container {
+    font-size: 45px !important; /* Manually increase star size */
+}
+
+.torturedpoets-theme .stars {
+    font-size: 45px !important; /* Ensure stars are actually bigger */
+}
+
+/* 🔥 Ensure song rows on TTPD don't shrink too much */
+.torturedpoets-theme .song {
+    min-height: 50px !important; /* Forces each song row to have more space */
+    font-size: 20px !important; /* Increases song text size for readability */
+}
