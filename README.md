@@ -1,7 +1,3 @@
-<<<<<<< Updated upstream
-# happiest-taylor-album
-a personal project from October 2023 analyzing the happiness levels of Taylor Swift's 10 albums (up to Taylor's Version of 1989); used Taylor's Versions and Deluxe editions where available, and included vault tracks when applicable
-=======
 # for-the-swifties
 
 A personal project started in October 2023 (continuously updated with new releases) that lets Swifties rate each song on a scale of 1-5, discover their favorite albums, and explore what their preferences say about them. The program also automatically adjusts rankings for ties and allows users to view lyrics for each song with a dynamic toggle.
