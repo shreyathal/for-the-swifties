@@ -37,5 +37,11 @@ Fix:
 🔹 Add tabs for skipping ahead/back between albums instead of clicking through all of them.
 🔹 Integrate audio playback so users can listen to each song while rating.
 
+📌 How to Run the Project:
 
->>>>>>> Stashed changes
+1️⃣ Clone the repository
+2️⃣ Install dependencies
+3️⃣ Run the server
+4️⃣ Open in your browser
+
+Thank you for checking out this project! Swifties, have fun ranking! 🎶💖
